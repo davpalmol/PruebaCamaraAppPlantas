@@ -41,6 +41,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    viewBinding {
+        enable = true
+    }
 }
 
 dependencies {
@@ -49,14 +52,19 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.squareup.okhttp3:okhttp:4.9.1")
     implementation ("com.google.android.material:material:1.3.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
-
+    implementation ("androidx.biometric:biometric:1.2.0-alpha05")
+    implementation ("com.tbuonomo:dotsindicator:4.3")
+    implementation ("androidx.cardview:cardview:1.0.0")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
     implementation ("androidx.activity:activity-compose:1.8.2")
     implementation ("androidx.compose.ui:ui:1.5.3")
     implementation ("androidx.compose.material:material:1.5.3")
     implementation ("androidx.compose.ui:ui-tooling-preview:1.5.3")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation ("com.google.mlkit:image-labeling:17.0.7")
+    implementation ("io.coil-kt:coil-compose:2.0.0")
 
     // Dependencia para CameraX (si vas a capturar fotos con la cámara)
     implementation ("androidx.camera:camera-core:1.3.0")

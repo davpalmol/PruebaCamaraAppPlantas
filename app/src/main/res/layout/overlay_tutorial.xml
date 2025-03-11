@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#99000000"> <!-- Oscurece la pantalla -->
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circular_shape"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layoutTopUser0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/imgProfile10"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_imgperfil"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="16dp"
+                app:circleCrop="true" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtUserName10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre del usuario"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- Contenedor del ranking -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardRanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/layoutTopUser0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:id="@+id/ranking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp"
+                android:background="#99000000">
+
+
+                <!-- Usuario superior en el ranking -->
+                <LinearLayout
+                    android:id="@+id/layoutTopUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:paddingBottom="8dp">
+
+                    <ImageView
+                        android:id="@+id/imgProfile1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_rankings"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="16dp"
+                        app:circleCrop="true" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtUserName1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre del usuario"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/txtUserScore1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Puntuación: 1200 pts"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtRankingPosition1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#1"
+                        android:textStyle="bold"
+                        android:textSize="22sp"
+                        android:textColor="@android:color/holo_green_dark"/>
+                </LinearLayout>
+
+                <!-- Usuario actual en el ranking (Centro) -->
+                <LinearLayout
+                    android:id="@+id/layoutCenterUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:paddingBottom="8dp"
+                    android:elevation="20dp">
+
+                    <ImageView
+                        android:id="@+id/imgProfile2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_rankings"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="16dp"
+                        app:circleCrop="true"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtUserName2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre del usuario"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/txtUserScore2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Puntuación: 1200 pts"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtRankingPosition2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#1"
+                        android:textStyle="bold"
+                        android:textSize="22sp"
+                        android:textColor="@android:color/holo_green_dark"/>
+                </LinearLayout>
+
+                <!-- Usuario inferior en el ranking -->
+                <LinearLayout
+                    android:id="@+id/layoutBottomUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/imgProfile3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_rankings"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="16dp"
+                        app:circleCrop="true" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtUserName3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre del usuario"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/txtUserScore3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Puntuación: 1200 pts"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtRankingPosition3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#1"
+                        android:textStyle="bold"
+                        android:textSize="22sp"
+                        android:textColor="@android:color/holo_green_dark"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Calendario -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintTop_toBottomOf="@id/cardRanking"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#70000000"
+                android:dateTextAppearance="@android:style/TextAppearance.Material"
+                android:padding="8dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección "Saber de plantas" -->
+        <TextView
+            android:id="@+id/txtSaberDePlantas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saber de plantas"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/cardCalendar"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Carrusel de plantas -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/plantsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="50dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_plant"
+            app:layout_constraintTop_toBottomOf="@id/txtSaberDePlantas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imagentuto1"
+        android:layout_width="480dp"
+        android:layout_height="480dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="-110dp"
+        android:src="@drawable/imgtuto1" />
+
+    <ImageView
+        android:id="@+id/imagentuto2"
+        android:layout_width="380dp"
+        android:layout_height="380dp"
+        android:layout_marginStart="114dp"
+        android:rotation="-30"
+        android:src="@drawable/imgtuto2" />
+
+    <ImageView
+        android:id="@+id/imagentuto3"
+        android:layout_width="380dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="250dp"
+        android:rotation="-30"
+        android:src="@drawable/imgtuto3" />
+
+    <!-- Botón para avanzar -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!-- Vista de la mitad izquierda (puedes dejarla vacía o poner algo en ella) -->
+        <View
+            android:id="@+id/halfLeftView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+        <!-- Vista de la mitad derecha -->
+        <View
+            android:id="@+id/halfRightView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSaltarTutorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saltar tutorial"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="50dp"/>
+
+
+</FrameLayout>

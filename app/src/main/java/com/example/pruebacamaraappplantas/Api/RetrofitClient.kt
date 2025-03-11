@@ -1,4 +1,4 @@
-package com.example.pruebacamaraappplantas
+package com.example.pruebacamaraappplantas.Api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

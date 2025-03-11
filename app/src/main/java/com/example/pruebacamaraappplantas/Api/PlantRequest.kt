@@ -1,4 +1,4 @@
-package com.example.pruebacamaraappplantas
+package com.example.pruebacamaraappplantas.Api
 
 data class PlantRequest(
     val images: List<String>,
