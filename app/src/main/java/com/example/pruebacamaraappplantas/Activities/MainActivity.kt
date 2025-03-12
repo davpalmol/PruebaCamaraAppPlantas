@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
     private lateinit var fabCaptureImage: FloatingActionButton
     private val plantListPrueba = mutableListOf<PlantaPrueba>()
+    private var backPressedTime: Long = 0
 
     private val apiKey = "9McR4b7a7Jtfb2FRU46OwhoYMDu6xkfZBFYD4CwnwlwyVsEsCV"
 
@@ -186,5 +187,15 @@ class MainActivity : AppCompatActivity() {
     fun hideLoading() {
         progressBar.visibility = View.GONE
         binding.overlayView.visibility = View.GONE
+    }
+
+    @Deprecated("This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
+    override fun onBackPressed() {
+        // Si el usuario pulsa el botón de "Atrás" por segunda vez en 2 segundos, salimos
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed()
+            finishAffinity() // Cierra todas las actividades y sale de la app
+        }
+        backPressedTime = System.currentTimeMillis()
     }
 }

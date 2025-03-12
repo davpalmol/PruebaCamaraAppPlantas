@@ -54,6 +54,7 @@ dependencies {
     implementation ("com.google.android.material:material:1.3.0")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
+    implementation ("androidx.core:core-splashscreen:1.0.0")  // Añadir la biblioteca de SplashScreen
     implementation ("androidx.biometric:biometric:1.2.0-alpha05")
     implementation ("com.tbuonomo:dotsindicator:4.3")
     implementation ("androidx.cardview:cardview:1.0.0")

@@ -1,8 +1,11 @@
 package com.example.pruebacamaraappplantas.Activities
 
+import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.pruebacamaraappplantas.R
 import com.example.pruebacamaraappplantas.databinding.ActivityLoginBinding
 import com.example.pruebacamaraappplantas.fragments.LoginFragment

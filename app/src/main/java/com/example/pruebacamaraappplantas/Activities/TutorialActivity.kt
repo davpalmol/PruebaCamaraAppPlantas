@@ -38,7 +38,7 @@ class TutorialActivity : AppCompatActivity() {
 
     private fun showOverlay() {
         val rootView = window.decorView.rootView as ViewGroup
-        overlayView = LayoutInflater.from(this).inflate(R.layout.overlay_tutorial, rootView, false)
+        overlayView = LayoutInflater.from(this).inflate(R.layout.activity_tutorial, rootView, false)
         rootView.addView(overlayView)
 
         bottomNavigationView = findViewById(R.id.bottomNavigation)
@@ -141,8 +141,8 @@ class TutorialActivity : AppCompatActivity() {
     private fun endTutorial() {
         val rootView = window.decorView.rootView as ViewGroup
         rootView.removeView(overlayView)
-        val intent = Intent(this, MainActivity::class.java)
+
+        val intent = Intent(this, SplashActivity::class.java)
         startActivity(intent)
-        finish()
     }
 }
