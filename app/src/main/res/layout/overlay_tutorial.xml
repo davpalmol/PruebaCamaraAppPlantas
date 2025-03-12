@@ -272,21 +272,7 @@
             app:layout_constraintTop_toBottomOf="@id/cardCalendar"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <!-- Carrusel de plantas -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/plantsRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="50dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="10"
-            tools:listitem="@layout/item_plant"
-            app:layout_constraintTop_toBottomOf="@id/txtSaberDePlantas"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -314,6 +300,46 @@
         android:rotation="-30"
         android:src="@drawable/imgtuto3" />
 
+    <ImageView
+        android:id="@+id/imagentuto4"
+        android:layout_width="380dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="385dp"
+        android:layout_gravity="end"
+        android:rotation="-30"
+        android:src="@drawable/imgtuto4"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/imagentuto5"
+        android:layout_width="380dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="385dp"
+        android:layout_marginStart="130dp"
+        android:rotation="-30"
+        android:src="@drawable/imgtuto5"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/imagentuto6"
+        android:layout_width="480dp"
+        android:layout_height="480dp"
+        android:layout_marginTop="365dp"
+        android:rotation="30"
+        android:layout_marginStart="-30dp"
+        android:src="@drawable/imgtuto6"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/imagentuto7"
+        android:layout_width="480dp"
+        android:layout_height="480dp"
+        android:layout_marginTop="365dp"
+        android:layout_marginStart="-130dp"
+        android:rotation="30"
+        android:src="@drawable/imgtuto7"
+        android:visibility="invisible" />
+
     <!-- Botón para avanzar -->
 
     <LinearLayout
@@ -339,13 +365,39 @@
 
     </LinearLayout>
 
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="-20dp"
+        android:layout_marginEnd="-20dp"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="20dp"
+        app:fabCradleVerticalOffset="10dp"
+        app:hideOnScroll="true"
+        tools:ignore="BottomAppBar"
+        android:background="#99000000">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-100dp"
+            android:layout_marginBottom="10dp"
+            app:menu="@menu/bottom_nav_menu"
+            android:background="#99000000"/>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
     <Button
         android:id="@+id/btnSaltarTutorial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Saltar tutorial"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="90dp"/>
 
 
 </FrameLayout>
