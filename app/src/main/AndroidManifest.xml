@@ -27,8 +27,12 @@
         android:theme="@style/Theme.PruebaCamaraAppPlantas"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.WordleActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity
             android:name=".Activities.SplashActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Activities.TutorialActivity"
             android:exported="false"

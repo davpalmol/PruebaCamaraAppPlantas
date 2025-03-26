@@ -226,6 +226,46 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardWordle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/cardRanking"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imagenwordle"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/imagenwordle"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPlantdex"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/cardRanking"
+        app:layout_constraintStart_toEndOf="@id/cardWordle"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imagenPlantdex"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/imagenplantdex" />
+
+    </androidx.cardview.widget.CardView>
+
+
     <!-- Calendario -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardCalendar"
@@ -235,7 +275,7 @@
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
         android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/cardRanking"
+        app:layout_constraintTop_toBottomOf="@id/cardWordle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 

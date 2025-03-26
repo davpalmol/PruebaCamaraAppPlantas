@@ -18,7 +18,7 @@ class WelcomeFragment : Fragment() {
     ): View? {
         binding = FragmentWelcomeBinding.inflate(inflater, container, false)
 
-        binding.tvlogin.setOnClickListener {
+        binding.constraintLayout2.setOnClickListener {
             val loginFragment = LoginFragment()
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView, loginFragment)
@@ -26,7 +26,7 @@ class WelcomeFragment : Fragment() {
                 .commit()
         }
 
-        binding.tvRegister.setOnClickListener {
+        binding.constraintLayout.setOnClickListener {
             val registerFragment = RegisterFragment()
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView, registerFragment)

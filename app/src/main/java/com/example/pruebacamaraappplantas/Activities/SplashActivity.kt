@@ -24,7 +24,7 @@ class SplashActivity : AppCompatActivity() {
             )
             startActivity(intent)
             finish()
-        }, 3000) // 3 segundos
+        }, 2000) // 3 segundos
     }
 
 

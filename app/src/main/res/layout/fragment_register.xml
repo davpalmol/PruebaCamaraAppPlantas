@@ -9,15 +9,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="757dp"
-        android:layout_height="1288dp"
+        android:layout_width="1191dp"
+        android:layout_height="1474dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/imagenprincipal" />
-
     <View
         android:id="@+id/view"
         android:layout_width="309dp"

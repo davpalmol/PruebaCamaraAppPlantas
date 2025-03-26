@@ -31,7 +31,7 @@ class LoginFragment : Fragment() {
                 .commit()
         }
 
-        binding.tvlogin.setOnClickListener {
+        binding.constraintLayout2.setOnClickListener {
             val intent = Intent(requireContext(), TutorialActivity::class.java)
             startActivity(intent)
         }

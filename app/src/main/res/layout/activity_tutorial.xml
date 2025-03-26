@@ -276,13 +276,83 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp">
+
+        <ImageView
+            android:id="@+id/imagentuto4"
+            android:layout_width="380dp"
+            android:layout_height="380dp"
+            android:layout_marginTop="385dp"
+            android:layout_gravity="end"
+            android:rotation="-30"
+            android:src="@drawable/imgtuto4"
+            android:visibility="invisible"
+            android:layout_marginBottom="-20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="NotSibling" />
+
+        <ImageView
+            android:id="@+id/imagentuto5"
+            android:layout_width="380dp"
+            android:layout_height="380dp"
+            android:layout_marginStart="130dp"
+            android:rotation="-30"
+            android:src="@drawable/imgtuto5"
+            android:layout_marginBottom="-20dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imagentuto6"
+            android:layout_width="480dp"
+            android:layout_height="480dp"
+            android:layout_marginBottom="-100dp"
+            android:rotation="30"
+            android:layout_marginStart="-30dp"
+            android:src="@drawable/imgtuto6"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imagentuto7"
+            android:layout_width="480dp"
+            android:layout_height="480dp"
+            android:layout_marginBottom="-100dp"
+            android:layout_marginStart="-130dp"
+            android:rotation="30"
+            android:src="@drawable/imgtuto7"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imagentuto8"
+            android:layout_width="380dp"
+            android:layout_height="380dp"
+            android:layout_marginStart="50dp"
+            android:src="@drawable/imgtuto8"
+            android:layout_marginBottom="-60dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <ImageView
         android:id="@+id/imagentuto1"
         android:layout_width="480dp"
         android:layout_height="480dp"
         android:layout_marginStart="82dp"
         android:layout_marginTop="-110dp"
-        android:src="@drawable/imgtuto1" />
+        android:src="@drawable/imgtuto1"
+        android:visibility="invisible"/>
 
     <ImageView
         android:id="@+id/imagentuto2"
@@ -290,7 +360,8 @@
         android:layout_height="380dp"
         android:layout_marginStart="114dp"
         android:rotation="-30"
-        android:src="@drawable/imgtuto2" />
+        android:src="@drawable/imgtuto2"
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/imagentuto3"
@@ -298,46 +369,7 @@
         android:layout_height="380dp"
         android:layout_marginTop="250dp"
         android:rotation="-30"
-        android:src="@drawable/imgtuto3" />
-
-    <ImageView
-        android:id="@+id/imagentuto4"
-        android:layout_width="380dp"
-        android:layout_height="380dp"
-        android:layout_marginTop="385dp"
-        android:layout_gravity="end"
-        android:rotation="-30"
-        android:src="@drawable/imgtuto4"
-        android:visibility="invisible"/>
-
-    <ImageView
-        android:id="@+id/imagentuto5"
-        android:layout_width="380dp"
-        android:layout_height="380dp"
-        android:layout_marginTop="385dp"
-        android:layout_marginStart="130dp"
-        android:rotation="-30"
-        android:src="@drawable/imgtuto5"
-        android:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/imagentuto6"
-        android:layout_width="480dp"
-        android:layout_height="480dp"
-        android:layout_marginTop="365dp"
-        android:rotation="30"
-        android:layout_marginStart="-30dp"
-        android:src="@drawable/imgtuto6"
-        android:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/imagentuto7"
-        android:layout_width="480dp"
-        android:layout_height="480dp"
-        android:layout_marginTop="365dp"
-        android:layout_marginStart="-130dp"
-        android:rotation="30"
-        android:src="@drawable/imgtuto7"
+        android:src="@drawable/imgtuto3"
         android:visibility="invisible" />
 
     <!-- Botón para avanzar -->
@@ -365,6 +397,18 @@
             app:menu="@menu/bottom_nav_menu"
             android:background="#99000000"/>
     </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCaptureImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_camera"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="55dp"
+        app:backgroundTint="@color/grey"
+        tools:ignore="RelativeOverlap" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -398,7 +442,8 @@
         android:layout_height="wrap_content"
         android:text="Saltar tutorial"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="90dp"/>
+        android:layout_marginBottom="120dp"
+        android:elevation="10dp" />
 
 
 </FrameLayout>

@@ -1,57 +1,49 @@
 package com.example.pruebacamaraappplantas.Activities
 
+import android.animation.ValueAnimator
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.view.animation.LinearInterpolator
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.pruebacamaraappplantas.R
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class TutorialActivity : AppCompatActivity() {
-    private var overlayView: View? = null
     private var stepIndex = 0
-    private var bottomNavigationView: BottomNavigationView? = null
+    private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var bottomAppBar: BottomAppBar
+    private lateinit var fab: FloatingActionButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         // Desactivar el modo nocturno
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
+        // Establecer la vista del tutorial
+        setContentView(R.layout.activity_tutorial)
 
-        // Iniciar el tutorial
-        startTutorial()
-    }
-
-    private fun startTutorial() {
-        showOverlay()
-        showStep()
-    }
-
-    private fun showOverlay() {
-        val rootView = window.decorView.rootView as ViewGroup
-        overlayView = LayoutInflater.from(this).inflate(R.layout.activity_tutorial, rootView, false)
-        rootView.addView(overlayView)
-
+        // Inicializar vistas
         bottomNavigationView = findViewById(R.id.bottomNavigation)
         bottomAppBar = findViewById(R.id.bottomAppBar)
 
         bottomAppBar.menu.setGroupEnabled(0, false)
 
-        findViewById<View>(R.id.btnSaltarTutorial)
-            .setOnClickListener { v: View? -> endTutorial() }
-        findViewById<View>(R.id.halfRightView)
-            .setOnClickListener { v: View? -> nextStep() }
-        findViewById<View>(R.id.halfLeftView)
-            .setOnClickListener { v: View? -> previousStep() }
+        fab = findViewById(R.id.fabCaptureImage)
+
+        findViewById<View>(R.id.btnSaltarTutorial).setOnClickListener { endTutorial() }
+        findViewById<View>(R.id.halfRightView).setOnClickListener { nextStep() }
+        findViewById<View>(R.id.halfLeftView).setOnClickListener { previousStep() }
+
+        // Iniciar tutorial
+        showStep()
     }
 
     private fun showStep() {
@@ -61,6 +53,7 @@ class TutorialActivity : AppCompatActivity() {
                 findViewById<View>(R.id.imagentuto1).visibility = View.VISIBLE
                 findViewById<View>(R.id.imagentuto2).visibility = View.INVISIBLE
                 findViewById<View>(R.id.imagentuto3).visibility = View.INVISIBLE
+                findViewById<Button>(R.id.btnSaltarTutorial).visibility = View.VISIBLE
                 findViewById<View>(R.id.ranking).setBackgroundColor(Color.parseColor("#99000000"))
             }
 
@@ -70,6 +63,7 @@ class TutorialActivity : AppCompatActivity() {
                 findViewById<View>(R.id.imagentuto3).visibility = View.VISIBLE
                 findViewById<View>(R.id.imagentuto2).visibility = View.INVISIBLE
                 findViewById<View>(R.id.ranking).setBackgroundColor(Color.WHITE)
+                findViewById<Button>(R.id.btnSaltarTutorial).visibility = View.INVISIBLE
                 findViewById<View>(R.id.calendarView).setBackgroundColor(Color.parseColor("#70000000"))
             }
 
@@ -107,24 +101,33 @@ class TutorialActivity : AppCompatActivity() {
             6 -> {
                 findViewById<View>(R.id.imagentuto6).visibility = View.INVISIBLE
                 findViewById<View>(R.id.imagentuto7).visibility = View.VISIBLE
+                findViewById<View>(R.id.imagentuto8).visibility = View.INVISIBLE
                 updateBottomBarSelection(R.id.nav_settings)
+            }
+
+            7 -> {
+                findViewById<View>(R.id.imagentuto7).visibility = View.INVISIBLE
+                findViewById<View>(R.id.imagentuto8).visibility = View.VISIBLE
+                updateBottomBarSelection(null)
+                animateFab(fab)
             }
         }
     }
 
-    private fun updateBottomBarSelection(itemId: Int) {
-        if (bottomNavigationView != null) {
-            bottomNavigationView!!.post {
-                val menuItem = bottomNavigationView!!.menu.findItem(itemId)
-                menuItem?.setChecked(true)
-                    ?: Log.d("TutorialActivity", "Menu item not found: $itemId")
+    private fun updateBottomBarSelection(itemId: Int?) {
+        bottomNavigationView.post {
+            val menuItem = itemId?.let { bottomNavigationView.menu.findItem(it) }
+            if (menuItem != null) {
+                menuItem.setChecked(true)
+            } else {
+                bottomNavigationView.menu.findItem(R.id.nav_settings).setChecked(false)
             }
         }
     }
 
     private fun nextStep() {
         stepIndex++
-        if (stepIndex > 6) {
+        if (stepIndex > 7) {
             endTutorial()
         } else {
             showStep()
@@ -132,17 +135,28 @@ class TutorialActivity : AppCompatActivity() {
     }
 
     private fun previousStep() {
-        stepIndex--
-        if (stepIndex >= 0) {
+        if (stepIndex > 0) {
+            stepIndex--
             showStep()
         }
     }
 
     private fun endTutorial() {
-        val rootView = window.decorView.rootView as ViewGroup
-        rootView.removeView(overlayView)
-
         val intent = Intent(this, SplashActivity::class.java)
         startActivity(intent)
+        finish()
+    }
+
+    private fun animateFab(fab: FloatingActionButton) {
+        val animator = ValueAnimator.ofFloat(1f, 1.3f, 1f) // Tamaño normal → grande → normal
+        animator.duration = 1000 // 1 segundo por ciclo
+        animator.repeatCount = ValueAnimator.INFINITE // Animación infinita
+        animator.interpolator = LinearInterpolator() // Transición suave
+        animator.addUpdateListener { animation ->
+            val scale = animation.animatedValue as Float
+            fab.scaleX = scale
+            fab.scaleY = scale
+        }
+        animator.start()
     }
 }

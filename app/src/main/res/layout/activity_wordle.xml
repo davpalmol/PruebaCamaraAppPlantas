@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Grid para las letras -->
+    <GridLayout
+        android:id="@+id/wordGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="5"
+        android:rowCount="6"
+        android:padding="5dp" />
+
+    <!-- Teclado virtual -->
+    <GridLayout
+        android:id="@+id/keyboardGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="10"
+        android:padding="5dp"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/inputField"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:visibility="visible"
+        android:layout_marginStart="500dp"/>  <!-- Hacemos invisible, pero sigue funcional -->
+
+</LinearLayout>
