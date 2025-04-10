@@ -46,6 +46,15 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    @Suppress("DEPRECATION")
+    private fun hideSystemUI() {
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_FULLSCREEN  // Oculta la barra de estado
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION  // Oculta la barra de navegación
+                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY // Permite recuperar la barra con un gesto
+                )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -53,6 +62,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        hideSystemUI()
 
         fabCaptureImage = binding.fabCaptureImage
         progressBar = binding.progressBar

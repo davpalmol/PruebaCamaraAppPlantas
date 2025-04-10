@@ -20,6 +20,14 @@ class TutorialActivity : AppCompatActivity() {
     private lateinit var bottomAppBar: BottomAppBar
     private lateinit var fab: FloatingActionButton
 
+    @Suppress("DEPRECATION")
+    private fun hideSystemUI() {
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_FULLSCREEN  // Oculta la barra de estado
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION  // Oculta la barra de navegación
+                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY // Permite recuperar la barra con un gesto
+                )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +37,8 @@ class TutorialActivity : AppCompatActivity() {
 
         // Establecer la vista del tutorial
         setContentView(R.layout.activity_tutorial)
+
+        hideSystemUI()
 
         // Inicializar vistas
         bottomNavigationView = findViewById(R.id.bottomNavigation)

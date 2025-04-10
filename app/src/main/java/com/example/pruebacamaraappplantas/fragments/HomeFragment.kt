@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pruebacamaraappplantas.Activities.PlantDexActivity
 import com.example.pruebacamaraappplantas.Adapters.PlantAdapter
 import com.example.pruebacamaraappplantas.Api.PlantaPrueba
 import com.example.pruebacamaraappplantas.R
@@ -36,6 +37,11 @@ class HomeFragment : Fragment() {
 
         binding.cardWordle.setOnClickListener {
             val intent = Intent(requireContext(), WordleActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.cardPlantdex.setOnClickListener {
+            val intent = Intent(requireContext(), PlantDexActivity::class.java)
             startActivity(intent)
         }
 

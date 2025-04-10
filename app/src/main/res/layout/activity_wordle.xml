@@ -2,8 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
+
+    <TextView
+        android:id="@+id/wordleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="roboto"
+        app:fontFamily="@font/komikax"
+        android:layout_gravity="center_horizontal"
+        android:text="Daily Wordle"
+        android:textSize="50sp" />
 
     <!-- Grid para las letras -->
     <GridLayout
@@ -34,5 +45,16 @@
         android:imeOptions="actionDone"
         android:visibility="visible"
         android:layout_marginStart="500dp"/>  <!-- Hacemos invisible, pero sigue funcional -->
+
+    <TextView
+        android:id="@+id/winMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Has Ganado!"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
 
 </LinearLayout>
